@@ -34,6 +34,18 @@ public:
 
 		return *this;
 	}
+	Vec3<T> operator + (const Vec3<T> &v) const
+	{
+		return Vec3<T>(x + v.x, y + v.y, z + v.z);
+	}
+	Vec3<T> operator - (const Vec3<T> &v) const
+	{
+		return Vec3<T>(x - v.x, y - v.y, z - v.z);
+	}
+	Vec3<T> operator * (const T &r) const
+	{
+		return Vec3<T>(x * r, y * r, z * r);
+	}
 
 	T x, y, z;
 };
@@ -66,7 +78,7 @@ T dot(const Vec3<T> &a, const Vec3<T> &b)
 template <typename T>
  Vec3<T> cross(const Vec3<T> &a, const Vec3<T> &b)
  {
-	return Vec3(
+	return Vec3<T>(
 		a.y * b.z - a.z * b.y,
 		b.z * a.x - b.x * a.z,
 		a.x * b.y - a.y * b.x);
