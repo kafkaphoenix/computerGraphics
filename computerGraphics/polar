@@ -1,0 +1,62 @@
+//
+//	inline T sphericalTheta(const Vec3<T> &);
+//	inline T sphericalPhi(const Vec3<T> &);
+//	inline T cosTheta(const Vec3<T> &);
+//	inline T sinTheta2(const Vec3<T> &w);
+//	inline T sinTheta2(const Vec3<T> &w);
+//	inline T cosPhi(const Vec3<T> &w);
+//	inline T sinPhi(const Vec3<T> &w);
+//
+//
+//template <typename T>
+//Vec3<T> sphericalToCartesian(const T &theta, const T &phi)
+//{
+//	return Vec3<T>(cos(phi) * sin(theta), sin(phi) * sin(theta), cos(theta));
+//}
+//
+//template <typename T>
+//inline T sphericalTheta(const Vec3<T> &v)
+//{
+//	return acos<T>(clamp<T>(v[2], -1, 1));
+//}
+//
+//template <typename T>
+//inline T sphericalPhi(const Vec3<T> &v)
+//{
+//	T p = atan2(v[1], v[0]);
+//	return (p < 0) ? p + 2 * M_PI : p;
+//}
+//
+//template<typename T>
+//inline T cosTheta(const Vec3<T> &w)
+//{
+//	return w[2];
+//}
+//
+//template<typename T>
+//inline T sinTheta2(const Vec3<T> &w)
+//{
+//    return std::max(T(0), 1 - cosTheta(w) * cosTheta(w));
+//}
+//
+//template<typename T>
+//inline T sinTheta(const Vec3<T> &w)
+//{
+//    return sqrt(sinTheta2(w));
+//}
+//
+//template<typename T>
+//inline T cosPhi(const Vec3<T> &w)
+//{
+//    T sintheta = sinTheta(w);
+//    if (sintheta == 0) return 1;
+//    return clamp<T>(w[0] / sintheta, -1, 1);
+//}
+//
+//template<typename T>
+//inline T sinPhi(const Vec3<T> &w)
+//{
+//    T sintheta = sinTheta(w);
+//    if (sintheta == 0) return 0;
+//    return clamp<T>(w[1] / sintheta, -1, 1);
+//}
